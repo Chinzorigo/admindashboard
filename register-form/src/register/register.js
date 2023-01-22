@@ -22,8 +22,6 @@ function Register() {
     lastName: Yup.string().required("Овог оруулна уу!"),
     email: Yup.string().email("Мэйл хаяг буруу байна").required("Имэйл оруулна уу!"),
     phone: Yup.number()
-      .min(8)
-      .max(8)
       .required("Утасны дугаар оруулна уу!"),
     password: Yup.string().required("Нууц үг оруулна уу!"),
     confirmPassword: Yup.string().required("Нууц үг давтан оруулна уу!"),
@@ -59,7 +57,7 @@ function Register() {
             }
           )
           .then((reponse) => {
-            console.log(reponse);
+            console.log("+data post",reponse.data);
           });
       } catch (error) {
         console.log(error);
@@ -93,9 +91,9 @@ function Register() {
     }
   };
 
-  useEffect(() => {
+/*   useEffect(() => {
     RegisterDataGet();
-  });
+  }); */
 
   return (
     <div className="container">
@@ -223,6 +221,8 @@ function Register() {
         <input type="submit" value="Sum" onClick={count} /> */}
 
       <div>
+        <button type="submit" onClick={RegisterDataGet}>Дата татах</button>
+        <input type="submit" value="GetData" onClick={RegisterDataGet}/>
         <p>First Name: {firstName} </p>
         <p>Last Name: {lastName}</p>
         <p>Email: {email}</p>
