@@ -1,12 +1,16 @@
-import './App.css';
+import React from 'react';
+import Home from './home/Home';
 import Register from './register/register';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 
-function App() {
+const App = () => {
   return (
-    <div>
-      <Register/>
-    </div>
+  <Routes>
+    <Route path="/" element = {<Home/>}/>
+    <Route path="/register" element = {<Register/>}/>
+  </Routes>
+
   );
 }
 
