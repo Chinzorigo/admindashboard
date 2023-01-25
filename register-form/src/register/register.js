@@ -160,7 +160,7 @@ function Register() {
             <input
               name="phone"
               type="tel"
-              placeholder="99112233"
+              placeholder="12345678"
               value={values.phone}
               onChange={handleChange}
               className={
