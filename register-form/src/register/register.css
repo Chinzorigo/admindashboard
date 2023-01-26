@@ -1,16 +1,16 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-  }
-  
-  :root {
-    --main-blue: #71b7e6;
-    --main-purple: #9b59b6;
-    --main-grey: #ccc;
-    --sub-grey: #d9d9d9;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --main-blue: #71b7e6;
+  --main-purple: #9b59b6;
+  --main-grey: #ccc;
+  --sub-grey: #d9d9d9;
+}
   
   body {
     display: flex;
@@ -105,26 +105,3 @@
     background: linear-gradient(-135deg, var(--main-blue), var(--main-purple));
   }
   
-  @media only screen and (max-width: 584px) {
-    .container {
-      max-width: 100%;
-    }
-  
-    form .userDetails .inputBox {
-      margin-bottom: 15px;
-      width: 100%;
-    }
-  
-    .container form .userDetails {
-      max-height: 300px;
-      overflow-y: scroll;
-    }
-  
-    .userDetails::-webkit-scrollbar {
-      width: 0;
-    }
-  }
-  
-  .button1{
-    background-color: red;
-  }

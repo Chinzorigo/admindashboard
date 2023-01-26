@@ -1,9 +1,10 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./register.css";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const password =
   /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
@@ -20,9 +21,10 @@ function Register() {
       .required("Нэр оруулна уу!")
       .test((value) => value.length > 1),
     lastName: Yup.string().required("Овог оруулна уу!"),
-    email: Yup.string().email("Мэйл хаяг буруу байна").required("Имэйл оруулна уу!"),
-    phone: Yup.number()
-      .required("Утасны дугаар оруулна уу!"),
+    email: Yup.string()
+      .email("Мэйл хаяг буруу байна")
+      .required("Имэйл оруулна уу!"),
+    phone: Yup.number().required("Утасны дугаар оруулна уу!"),
     password: Yup.string().required("Нууц үг оруулна уу!"),
     confirmPassword: Yup.string().required("Нууц үг давтан оруулна уу!"),
   });
@@ -56,8 +58,9 @@ function Register() {
               confirmPassword: values.confirmPassword,
             }
           )
-          .then((reponse) => {
-            console.log("+data post",reponse.data);
+          .then(() => {
+            //console.log("+data post", reponse.data);
+            <Link to="/"></Link>
           });
       } catch (error) {
         console.log(error);
@@ -66,7 +69,7 @@ function Register() {
   });
 
   // post -> Database unshih
-  const RegisterDataGet = async () => {
+/*   const RegisterDataGet = async () => {
     try {
       await axios
         .get(
@@ -89,11 +92,9 @@ function Register() {
     } catch (error) {
       console.log(error);
     }
-  };
+  }; */
 
-/*   useEffect(() => {
-    RegisterDataGet();
-  }); */
+
 
   return (
     <div className="container">
@@ -182,8 +183,7 @@ function Register() {
               type={passwordShown === true ? "text" : "password"}
               placeholder="**"
               className={
-                "form-control" +
-                errors.password && touched.password
+                "form-control" + errors.password && touched.password
                   ? "text-input error"
                   : "text-input"
               }
@@ -205,7 +205,6 @@ function Register() {
                   ? "text-input error"
                   : "text-input"
               }
-              
             />
             <div className="input-feedback">{errors.confirmPassword}</div>
           </div>
@@ -220,14 +219,17 @@ function Register() {
         <input type="submit" value="Eye" onClick={handleClick} />
         <input type="submit" value="Sum" onClick={count} /> */}
 
-      <div>
-        <button type="submit" onClick={RegisterDataGet}>Дата татах</button>
-        <input type="submit" value="GetData" onClick={RegisterDataGet}/>
-        <p>First Name: {firstName} </p>
+{/*       <div>
+        <button type="submit" onClick={RegisterDataGet}>
+          Дата татах
+        </button> */}
+        {/*         <input type="submit" value="GetData" onClick={RegisterDataGet}/>
+         */}
+{/*         <p>First Name: {firstName} </p>
         <p>Last Name: {lastName}</p>
         <p>Email: {email}</p>
         <p>Phone: {phone}</p>
-      </div>
+      </div> */}
     </div>
   );
 }
