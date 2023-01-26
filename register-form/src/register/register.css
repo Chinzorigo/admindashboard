@@ -53,6 +53,17 @@
     justify-content: space-between;
     margin: 20px 0 12px 0;
   }
+
+  .container form .loginButtons {
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    margin: 0px 0px 0px 0;
+    padding: 0rem 0rem 0rem 0rem;
+
+  }
+
   /* inside the form user details */
   form .userDetails .inputBox {
     width: calc(100% / 2 - 20px);

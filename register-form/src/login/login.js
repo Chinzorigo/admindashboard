@@ -1,7 +1,5 @@
 import { useState } from "react";
 import { useFormik } from "formik";
-import "./login.css";
-import "../shared/main.css";
 import * as Yup from "yup";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -21,7 +19,6 @@ function Login() {
     },
   });
 
-
   return (
     <div className="container">
       <div className="title">Нэвтрэх</div>
@@ -32,7 +29,7 @@ function Login() {
             <input
               name="email"
               type="email"
-              placeholder="someone@gmail.com"
+              placeholder="username@gmail.com"
               onChange={formik.handleChange}
               value={formik.values.email}
             />
@@ -49,13 +46,15 @@ function Login() {
             />
           </div>
         </div>
-        <div className="button">
-          <input type="submit" value="Нэвтрэх" />
-        </div>
-        <div>
-          <button>
-            <Link to="/register">Бүртгүүлэх</Link>
-          </button>
+        <div className="loginButtons">
+          <div className="button">
+            <input type="submit" value="Нэвтрэх" />
+          </div>
+          <div className="button">
+            <Link to="/register">
+              <input type="submit" value="Бүртгүүлэх" />
+            </Link>
+          </div>
         </div>
       </form>
     </div>
