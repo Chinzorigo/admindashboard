@@ -20,17 +20,17 @@ const AdminPanelMenu = () => {
       {
         key: '1',
         icon: <UserOutlined />,
-        label: 'nav 1',
+        label: 'Dashboard',
       },
       {
         key: '2',
         icon: <VideoCameraOutlined />,
-        label: 'nav 2',
+        label: 'Products',
       },
       {
         key: '3',
         icon: <UploadOutlined />,
-        label: 'nav 3',
+        label: 'Service',
       },
     ]}
   />
