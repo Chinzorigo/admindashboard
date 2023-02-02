@@ -9,7 +9,7 @@ import {
 import { Layout, theme } from 'antd';
 import './AdminPanel.css'
 import AdminPanelMenu from './AdminPanelMenu';
-const { Header, Sider, Content } = Layout;
+const { Header, Sider, Content, Footer } = Layout;
 const AdminPanel = () => {
   const [collapsed, setCollapsed] = useState(false);
   const {
@@ -43,6 +43,13 @@ const AdminPanel = () => {
         >
           Content
         </Content>
+        <Footer
+          style={{
+            textAlign: 'center',
+          }}
+        >
+          Chinzorig Systems LLC ©2023 Created by Chinzo
+        </Footer>
       </Layout>
     </Layout>
   );
