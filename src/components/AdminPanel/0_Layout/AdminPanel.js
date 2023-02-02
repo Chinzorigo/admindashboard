@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Route } from 'react-router-dom';
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
@@ -9,6 +10,7 @@ import {
 import { Layout, theme } from 'antd';
 import './AdminPanel.css'
 import AdminPanelMenu from './AdminPanelMenu';
+import AdminDashBoard from '../1_DashBoard/DashBoard';
 const { Header, Sider, Content, Footer } = Layout;
 const AdminPanel = () => {
   const [collapsed, setCollapsed] = useState(false);
@@ -41,7 +43,7 @@ const AdminPanel = () => {
             background: colorBgContainer,
           }}
         >
-          Content
+        Content
         </Content>
         <Footer
           style={{

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   PieChartOutlined,
   CarOutlined,
@@ -16,7 +17,7 @@ function getItem(label, key, icon, children) {
     key,
     icon,
     children,
-    label,
+    label
   };
 }
 const items = [
@@ -40,6 +41,7 @@ const AdminPanelMenu = () => {
       defaultSelectedKeys={["1"]}
       mode="inline"
       items={items}
+      
     />
   );
 };
