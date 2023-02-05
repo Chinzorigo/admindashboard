@@ -12,6 +12,7 @@ import './AdminPanel.css'
 import AdminPanelMenu from './AdminPanelMenu';
 import AdminDashBoard from '../1_DashBoard/DashBoard';
 const { Header, Sider, Content, Footer } = Layout;
+
 const AdminPanel = () => {
   const [collapsed, setCollapsed] = useState(false);
   const {
@@ -35,7 +36,7 @@ const AdminPanel = () => {
             onClick: () => setCollapsed(!collapsed),
           })}
         </Header>
-        <Content
+        <Content className='adminContentStyle'
           style={{
             margin: '24px 16px',
             padding: 24,
@@ -43,6 +44,7 @@ const AdminPanel = () => {
             background: colorBgContainer,
           }}
         >
+        {/* <Route exact path="/adminpanel/test" component={AdminDashBoard} /> */}
         Content
         </Content>
         <Footer

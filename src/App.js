@@ -5,7 +5,7 @@ import AdminPanel from "./components/AdminPanel/0_Layout/AdminPanel";
 const App = () => {
   return (
     <Routes>
-      <Route path="/" element={<AdminPanel />} />
+      <Route path="/adminpanel" element={<AdminPanel />} />
     </Routes>
   )
 };

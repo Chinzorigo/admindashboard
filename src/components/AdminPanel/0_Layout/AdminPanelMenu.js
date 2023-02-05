@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState} from "react";
 import { Link } from "react-router-dom";
 import {
   PieChartOutlined,
@@ -35,6 +35,20 @@ const items = [
 ];
 
 const AdminPanelMenu = () => {
+  const [selectedKey, setSelectedKey] = useState('1');
+
+  const handleClick = (e) => {
+    setSelectedKey(e.key);
+    if (e.key === '1') {
+      adminDashboard();
+    }
+  };
+
+  const adminDashboard = () => {
+    console.log("Admin Dashboard is clicked");
+  };
+
+
   return (
     <Menu
       theme="dark"
@@ -43,6 +57,8 @@ const AdminPanelMenu = () => {
       items={items}
       
     />
+
+
   );
 };
 
