@@ -7,10 +7,10 @@ import {
   UserOutlined,
   VideoCameraOutlined, */
 } from '@ant-design/icons';
-import { Layout, theme } from 'antd';
+import { Layout, Switch, theme } from 'antd';
 import './AdminPanel.css'
 import AdminPanelMenu from './AdminPanelMenu';
-import AdminDashBoard from '../1_DashBoard/DashBoard';
+import AdminDashBoard from '../1_DashBoard/adminDashBoard';
 const { Header, Sider, Content, Footer } = Layout;
 
 const AdminPanel = () => {
@@ -44,8 +44,11 @@ const AdminPanel = () => {
             background: colorBgContainer,
           }}
         >
-        {/* <Route exact path="/adminpanel/test" component={AdminDashBoard} /> */}
-        Content
+
+        <AdminDashBoard />
+
+
+        
         </Content>
         <Footer
           style={{
