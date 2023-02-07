@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
@@ -7,10 +7,21 @@ import {
   UserOutlined,
   VideoCameraOutlined, */
 } from '@ant-design/icons';
-import { Layout, Switch, theme } from 'antd';
+import { Layout, theme } from 'antd';
 import './AdminPanel.css'
 import AdminPanelMenu from './AdminPanelMenu';
-import AdminDashBoard from '../1_DashBoard/adminDashBoard';
+import AdminDashBoard from '../1_DashBoard/AdminDashBoard';
+import AdminProducts from '../2_Products/AdminProducts';
+import AdminServices from '../3_Services/AdminServices';
+import AdminOrders from '../4_Orders/AdminOrders';
+import AdminUsers from '../5_Users/AdminUsers';
+import AdminProductSuppliers from '../6_ProductSuppliers/AdminProductSuppliers';
+import AdminServiceSuppliers from '../7_ServiceSuppliers/AdminServiceSuppliers';
+import AdminFeedback from '../8_Feedback/AdminFeedback';
+import AdminReports from '../9_Reports/AdminReports';
+
+
+
 const { Header, Sider, Content, Footer } = Layout;
 
 const AdminPanel = () => {
@@ -44,10 +55,18 @@ const AdminPanel = () => {
             background: colorBgContainer,
           }}
         >
+        <Routes>
+          <Route path="/adminpanel/1" component={AdminDashBoard} />
+          <Route path="/adminpanel" component={AdminProducts} />
+          <Route path="/adminpanel" component={AdminServices} />
+          <Route path="/adminpanel" component={AdminOrders} />
+          <Route path="/adminpanel" component={AdminUsers} />
+          <Route path="/adminpanel" component={AdminServiceSuppliers} />
+          <Route path="/adminpanel" component={AdminProductSuppliers} />
+          <Route path="/adminpanel" component={AdminFeedback} />
+          <Route path="/adminpanel" component={AdminReports} />
 
-        <AdminDashBoard />
-
-
+          </Routes>
         
         </Content>
         <Footer

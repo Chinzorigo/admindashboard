@@ -11,7 +11,7 @@ import {
   DollarOutlined
 } from "@ant-design/icons";
 import { Menu } from "antd";
-import AdminDashBoard from "../1_DashBoard/adminDashBoard";
+import AdminDashBoard from "../1_DashBoard/AdminDashBoard";
 import AdminProducts from "../2_Products/AdminProducts";
 import AdminServices from "../3_Services/AdminServices"; 
 import AdminOrders from "../4_Orders/AdminOrders";
@@ -33,17 +33,17 @@ function getItem(label, key, icon, children) {
   };
 }
 const items = [
-  getItem("Хянах самбар", "1", <DashboardOutlined />, <Route path="/admin/1" component={AdminDashBoard}  />),
-  getItem("Бүтээгдэхүүн", "2", <CarOutlined />, <Route path="/adminpanel/admin/2" component={AdminProducts}  />),
-  getItem("Үйлчилгээ", "3", <DesktopOutlined />, <Route path="/admin/3" component={AdminServices}  />),
-  getItem("Захиалга", "4", <DollarOutlined />, <Route path="/admin/4" component={AdminOrders}  />),
-  getItem("Хэрэглэгч", "5", <UserOutlined />, <Route path="/admin/5" component={AdminUsers}  />),
+  getItem("Хянах самбар", "1", <DashboardOutlined />, <Route path="/adminpanel/1" component={AdminDashBoard}  />),
+  getItem("Бүтээгдэхүүн", "2", <CarOutlined />, <Route path="/adminpanel" component={AdminProducts}  />),
+  getItem("Үйлчилгээ", "3", <DesktopOutlined />, <Route path="/adminpanel" component={AdminServices}  />),
+  getItem("Захиалга", "4", <DollarOutlined />, <Route path="/adminpanel" component={AdminOrders}  />),
+  getItem("Хэрэглэгч", "5", <UserOutlined />, <Route path="/adminpanel" component={AdminUsers}  />),
   getItem("Нийлүүлэгч", "sub1", <TeamOutlined />, [
-    getItem("Бүтээгдэхүүн нийлүүлэгч", "6",<Route path="/admin/6" component={AdminProductSuppliers}  />),
-    getItem("Үйлчилгээ үзүүлэгч", "7", <Route path="/admin/7" component={AdminServiceSuppliers}  />),
+    getItem("Бүтээгдэхүүн нийлүүлэгч", "6",<Route path="/adminpanel" component={AdminProductSuppliers}  />),
+    getItem("Үйлчилгээ үзүүлэгч", "7", <Route path="/adminpanel" component={AdminServiceSuppliers}  />),
   ]),
-  getItem("Лавлагаа", "8", <PaperClipOutlined />, <Route path="/admin/8" component={AdminFeedback}  />),
-  getItem("Тайлан", "9", <PieChartOutlined />,<Route path="/admin/9" component={AdminReports}  />),
+  getItem("Лавлагаа", "8", <PaperClipOutlined />, <Route path="/adminpanel" component={AdminFeedback}  />),
+  getItem("Тайлан", "9", <PieChartOutlined />,<Route path="/adminpanel" component={AdminReports}  />),
 ];
 
 const AdminPanelMenu = () => {
@@ -75,6 +75,8 @@ const AdminPanelMenu = () => {
 
 
   );
+};
+
 };
 
 export default AdminPanelMenu;
